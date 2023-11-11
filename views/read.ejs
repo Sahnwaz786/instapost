@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/read.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="page">
+        <nav>
+
+            <a href="/">Home</a>
+            &nbsp; &nbsp;&nbsp;
+            <a href="/create">Create-Post</a>
+            &nbsp; &nbsp;&nbsp;
+            <a href="/read">Read-Posts</a>
+        </nav>
+         
+        
+            <% post.forEach(function(e,index){ %>
+                <div id="content">
+               <div id="in">
+                 
+                <img id="img1" src="<%= e.profileimage %>" alt="">
+               <div id="nt">
+                <h3><%= e.Name %></h3>
+                <p><%= e.Date %></p>
+                <h5><%= e.Subtitle %></h5>
+               </div>
+               </div>
+                 
+                <br>
+                <h6><%= e.Posttext %></h6>
+                <br>
+                 <img id="img2" src="<%= e.Postimage %>" alt="">
+    
+                <a href="/like/<%= index %>">❤️</a> <%= e.like %>
+                 &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                 
+                <a href="/update/<%= index %> ">Update</a>
+                &nbsp;&nbsp;&nbsp;
+                <a href="/delete/<%= index %> ">Delete</a>
+            </div>
+    
+                <% }) %>
+        
+        
+
+
+
+
+
+
+
+</body>
+
+</html>
